@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Album } from '../application/domain/album.model';
+import { Album } from '../domain/album.model';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs';
 
