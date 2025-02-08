@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Album } from '../domain/album.model';
 import { AlbumRepository } from '../application/album-repository';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AlbumServiceService implements AlbumRepository {
-  private baseUrl = 'http//:localhost:8080/albums';
+export class AlbumService implements AlbumRepository {
+  private baseUrl = 'http://localhost:8080/albums/';
 
   constructor(private http: HttpClient) {}
 

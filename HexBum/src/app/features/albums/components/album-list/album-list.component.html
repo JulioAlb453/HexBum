@@ -1,22 +1,30 @@
-<div class="album-list">
-    <table mat-table [dataSource]="albums" class="mat-elevation-z8">
+<div class="container">
+  <div class="content-wrapper">
+    <h2>Albumes</h2>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef>Title</th>
-        <td mat-cell *matCellDef="let album">{{ album.title }}</td>
+        <td mat-cell *matCellDef="let album">{{ album.Title }}</td>
       </ng-container>
-  
+
       <ng-container matColumnDef="artist">
         <th mat-header-cell *matHeaderCellDef>Artist</th>
-        <td mat-cell *matCellDef="let album">{{ album.artist }}</td>
+        <td mat-cell *matCellDef="let album">{{ album.Artist }}</td>
       </ng-container>
-  
+
       <ng-container matColumnDef="releaseDate">
         <th mat-header-cell *matHeaderCellDef>Release Date</th>
-        <td mat-cell *matCellDef="let album">{{ album.releaseDate | date }}</td>
+        <td mat-cell *matCellDef="let album">{{ album.Year }}</td>
       </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="['title', 'artist', 'releaseDate']"></tr>
-      <tr mat-row *matRowDef="let row; columns: ['title', 'artist', 'releaseDate'];"></tr>
+
+      <tr
+        mat-header-row
+        *matHeaderRowDef="['title', 'artist', 'releaseDate']"
+      ></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: ['title', 'artist', 'releaseDate']"
+      ></tr>
     </table>
   </div>
-  
+</div>
