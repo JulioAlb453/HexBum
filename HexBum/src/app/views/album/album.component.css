@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.album-list {
+    flex: 1;
+    margin-right: 20px;
+    
+}
+
+.album-form {
+    flex: 2;
+    margin-left: 20px;
+}

@@ -1,0 +1,75 @@
+<div class="album-form-container">
+  <form [formGroup]="albumForm" (ngSubmit)="saveAlbum()">
+    <div class="form-row">
+      <label>Titulo del album</label>
+      <input type="text" formControlName="title" />
+      <div
+        *ngIf="
+          albumForm.get('title')?.invalid && albumForm.get('title')?.touched
+        "
+      >
+        <small *ngIf="albumForm.get('title')?.errors?.['required']"
+          >El titulo del album es requerido</small
+        >
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Nombre del artista</label>
+      <input type="text" formControlName="artist" />
+      <div
+        *ngIf="
+          albumForm.get('artist')?.invalid && albumForm.get('artist')?.touched
+        "
+      >
+        <small *ngIf="albumForm.get('artist')?.errors?.['required']"
+          >El nombre del artista es requerido</small
+        >
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Año de publicacion del album</label>
+      <input type="text" formControlName="year" />
+      <div
+        *ngIf="albumForm.get('year')?.invalid && albumForm.get('year')?.touched"
+      >
+        <small *ngIf="albumForm.get('year')?.errors?.['required']"
+          >El año del album es requerida.</small
+        >
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Albumes en stock</label>
+      <input type="number" formControlName="stock" min="0" />
+      <div
+        *ngIf="
+          albumForm.get('stock')?.invalid && albumForm.get('stock')?.touched
+        "
+      >
+        <small *ngIf="albumForm.get('stock')?.errors?.['required']"
+          >El stock es requerido.</small
+        >
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Precio individual del album</label>
+      <input type="number" formControlName="price" min="1" />
+      <div
+        *ngIf="
+          albumForm.get('price')?.invalid && albumForm.get('price')?.touched
+        "
+      >
+        <small *ngIf="albumForm.get('price')?.errors?.['required']"
+          >El Precio es requerido.</small
+        >
+      </div>
+    </div>
+
+    <button type="submit" class="summit-button" [disabled]="albumForm.invalid">
+      Agregar album
+    </button>
+  </form>
+</div>

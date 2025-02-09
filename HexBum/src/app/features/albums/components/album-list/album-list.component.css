@@ -1,13 +1,31 @@
 .container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+
 }
 
 .content-wrapper {
-    padding: 20px;
-    width: 60%;
+  padding: 10px;
+  background-color: #f87d6b;
+  border-radius: .5rem;
+  display: flex;
+}
+
+
+.table-row-title,
+th {
+  font-family: "Montserrat", serif;
+}
+
+td {
+  font-family: "Montserrat", serif;
+}
+
+h2 {
+  color: white;
 }

@@ -13,8 +13,8 @@ import { AlbumService } from '../../../../core/service/album.service';
   styleUrls: ['./album-list.component.css'],
 })
 export class AlbumListComponent implements OnInit {
-  dataSource: Album[] = []; 
-  displayedColumns: string[] = ['title', 'artist', 'releaseDate']; 
+  dataSource: Album[] = [];
+  displayedColumns: string[] = ['title', 'artist', 'releaseDate', 'stock', 'price'];
 
   constructor(private albumService: AlbumService) {}
 
@@ -32,5 +32,4 @@ export class AlbumListComponent implements OnInit {
       },
     });
   }
-  
 }
