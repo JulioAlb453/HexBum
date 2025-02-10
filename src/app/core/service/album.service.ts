@@ -25,6 +25,7 @@ export class AlbumService implements AlbumRepository {
   }
 
   deleteAlbum(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+    console.log('Id del album: ' + id)
+    return this.http.delete<void>(`${this.baseUrl}${id}`);
   }
 }

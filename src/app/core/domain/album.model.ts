@@ -1,5 +1,5 @@
 export interface Album{
-        _id?: number
+        _id?: string
         Title: string
         Artist : string
         Year: string

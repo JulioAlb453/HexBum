@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
@@ -18,7 +18,9 @@ import { Album } from '../../../../core/domain/album.model';
 })
 export class AlbumFormComponent implements OnChanges {
   @Input() albumData?: Album;
+  @Output() albumCreated = new EventEmitter<void>()
   albumForm: FormGroup;
+
 
   constructor(private fb: FormBuilder, private albumApi: AlbumService) {
     this.albumForm = this.fb.group({
@@ -56,6 +58,7 @@ export class AlbumFormComponent implements OnChanges {
           console.log('Álbum creado exitosamente:', response);
           alert('Álbum creado exitosamente');
           this.albumForm.reset(); 
+          this.albumCreated.emit()
         },
         error: (err) => {
           console.error('Error al crear el álbum:', err);

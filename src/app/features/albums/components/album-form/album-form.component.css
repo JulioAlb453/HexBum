@@ -1,7 +1,18 @@
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
 .album-form-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
+  background-color: #48B59F;
+  box-shadow: -.4rem 5px 2rem rgba(0, 0, 0, 0.377); 
+  border-radius: .5rem;
 }
 
 .form-row {
@@ -10,11 +21,11 @@
   margin-bottom: 15px;
 }
 
-input [type="text"],
-input [type="number"] {
+.input-album {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #FCB8C2;
+  font-family: "Montserrat", serif;
 }
 
 label{

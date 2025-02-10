@@ -12,20 +12,32 @@
 .content-wrapper {
   padding: 10px;
   background-color: #f87d6b;
+  box-shadow: .2rem 5px 2rem rgba(0, 0, 0, 0.377); 
   border-radius: .5rem;
   display: flex;
+}
+
+.table-container{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  
 }
 
 
 .table-row-title,
 th {
   font-family: "Montserrat", serif;
+  font-size: 18px;
 }
 
 td {
   font-family: "Montserrat", serif;
+  font-size: 18px;
+
 }
 
 h2 {
   color: white;
+
 }

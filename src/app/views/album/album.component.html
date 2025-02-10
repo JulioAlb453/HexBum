@@ -1,10 +1,12 @@
 <div class="container">
   <div class="album-list">
     <h1>Album List</h1>
-    <app-album-list></app-album-list>
+    <app-album-list #albumList></app-album-list>
   </div>
 
   <div class="album-form">
-    <app-album-form></app-album-form>
+    <app-album-form (albumCreated)="albumList.fetchAlbums()"></app-album-form>
+ 
   </div>
+
 </div>
