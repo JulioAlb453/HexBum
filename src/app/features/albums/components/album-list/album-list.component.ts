@@ -27,7 +27,8 @@ export class AlbumListComponent implements OnInit {
     'releaseDate',
     'stock',
     'price',
-    'actions'
+    'actions',
+    'folio'
   ];
 
   constructor(private albumService: AlbumService) {}

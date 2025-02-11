@@ -21,7 +21,7 @@ export class AlbumService implements AlbumRepository {
   }
 
   getAlbumsById(id: string): Observable<Album | null> {
-    return this.http.get<Album | null>(`${this.baseUrl}/${id}`);
+    return this.http.get<Album | null>(`${this.baseUrl}${id}`);
   }
 
   deleteAlbum(id: string): Observable<void> {

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="content-wapper">
+    <div class="search-container">
+      <form (submit)="searchAlbumbyId($event)">
+        <h3>Buscar album por su folio</h3>
+        <input
+          type="text"
+          [(ngModel)]="searchId"
+          class="input-album"
+          name="searchId"
+          placeholder="Ingrese el ID del álbum"
+          required
+        />
+        <button type="submit" class="search-button">Buscar</button>
+      </form>
+    </div>
+    <div class="search-result" *ngIf="data">
+      <h3>Resultado de la busqueda</h3>
+      <h3>Nombre del album: {{ data.Title }}</h3>
+      <p>Nombre del artista: {{ data.Artist }}</p>
+      <p>año de publicacion del album:  {{ data.Year }}</p>
+      <p>Stock actual: {{ data.Stock }}/U</p>
+      <p>Precio individual: {{ data.Price }}$</p>
+    </div>
+  </div>
+</div>
