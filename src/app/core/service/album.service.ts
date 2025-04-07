@@ -30,5 +30,9 @@ export class AlbumService implements AlbumRepository {
 
   updateAlbum(itemId: string, album: Album): Observable<Album> {
     return this.http.put<Album>(`${this.baseUrl}${itemId}`, album);
+  } 
+
+  getAlbumByArtist(Artist: string): Observable<Album> {
+    return this.http.get<Album>(`${this.baseUrl}`)
   }
 }

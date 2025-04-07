@@ -1,47 +1,77 @@
 .container {
   max-width: 100%;
-  margin: 0 auto;
-  padding: 30px;
-  margin-top: 40px;
+  padding: 30px 20px;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .album-form-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 30px;
+  width: 100%;
+  max-width: 700px;
   background-color: #48B59F;
-  box-shadow: -.4rem 5px 2rem rgba(0, 0, 0, 0.377); 
-  border-radius: .5rem;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .form-row {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
 .input-album {
-  padding: 10px;
-  font-size: 16px;
+  padding: 12px 15px;
+  font-size: 1rem;
   border: 1px solid #FCB8C2;
-  font-family: "Montserrat", serif;
+  border-radius: 6px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
 }
 
-label{
-  font-size: 18px;
-  margin-bottom: 5px;
+.input-album:focus {
+  outline: none;
+  border-color: #2b5959;
+  box-shadow: 0 0 0 3px rgba(43, 89, 89, 0.2);
+}
+
+small {
+  color: #fff;
+  background-color: #f44336;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  width: fit-content;
 }
 
 .summit-button {
-  padding: 10px 20px;
+  width: 100%;
+  padding: 12px;
   background-color: #2b5959;
-  color: white;
+  color: #ffffff;
   border: none;
-  border-radius: 4px;
-  font-size: 18px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  justify-content: space-around;
-  margin-right: 60px;
-  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.summit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.summit-button:hover:not(:disabled) {
+  background-color: #214343;
 }

@@ -1,14 +1,17 @@
 <div class="container">
-  <div class="album-list">
-    <h1>Album List</h1>
-    <app-album-list #albumList></app-album-list>
+  <div class="left-panel">
+    <h1>Catálogo de Álbumes</h1>
+    
+    <div class="search-section">
+      <app-search-album></app-search-album>
+    </div>
+
+    <div class="album-list">
+      <app-album-list #albumList></app-album-list>
+    </div>
   </div>
 
-  <div class="album-form">
+  <div class="right-panel">
     <app-album-form (albumCreated)="albumList.fetchAlbums()"></app-album-form>
-  </div>
-
-  <div class="album-search">
-    <app-search-album></app-search-album>
   </div>
 </div>
