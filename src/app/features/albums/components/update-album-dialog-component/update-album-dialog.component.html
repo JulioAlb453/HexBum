@@ -1,0 +1,36 @@
+<h2>Actualizar Álbum</h2>
+
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+<div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+
+<form (ngSubmit)="updateAlbum()">
+  <mat-form-field appearance="outline">
+    <mat-label>Título</mat-label>
+    <input matInput [(ngModel)]="updateData.Title" name="title" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Artista</mat-label>
+    <input matInput [(ngModel)]="updateData.Artist" name="artist" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Año</mat-label>
+    <input matInput type="text" [(ngModel)]="updateData.Year" name="year" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Stock</mat-label>
+    <input matInput type="number" [(ngModel)]="updateData.Stock" name="stock" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Precio</mat-label>
+    <input matInput type="number" [(ngModel)]="updateData.Price" name="price" required />
+  </mat-form-field>
+
+  <div class="button-container">
+    <button mat-button (click)="dialogRef.close()">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit">Actualizar</button>
+  </div>
+</form>

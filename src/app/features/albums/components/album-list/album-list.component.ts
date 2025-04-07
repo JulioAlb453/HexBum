@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AlbumService } from '../../../../core/service/album.service';
 import { DeleteButtonComponent } from '../../../../shared/components/delete-button/delete-button.component';
-
+import { ButtonUpdateAlbumComponentComponent } from '../button-update-albumc-component/button-update-album-component.component';
 @Component({
   selector: 'app-album-list',
   standalone: true,
@@ -14,6 +14,8 @@ import { DeleteButtonComponent } from '../../../../shared/components/delete-butt
     CommonModule,
     HttpClientModule,
     DeleteButtonComponent,
+    ButtonUpdateAlbumComponentComponent,
+    
   ],
   templateUrl: './album-list.component.html',
   styleUrls: ['./album-list.component.css'],
@@ -50,6 +52,10 @@ export class AlbumListComponent implements OnInit {
   }
  
   handlerAlbumsDelete():void{
+    this.fetchAlbums()
+  }
+
+  handlerAlbumsUpdate(): void{
     this.fetchAlbums()
   }
 }
