@@ -2,11 +2,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AlbumService } from '../../../../core/service/album.service';
 import { UpdateAlbumDialogComponent } from '../update-album-dialog-component/update-album-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-button-update-album-component',
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './button-update-album-component.component.html',
   styleUrl: './button-update-album-component.component.css',
 })

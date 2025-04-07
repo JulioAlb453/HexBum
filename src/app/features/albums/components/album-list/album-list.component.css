@@ -20,6 +20,13 @@
 .table-container {
   width: 100%;
 }
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 
 h2 {
   color: #ffffff;

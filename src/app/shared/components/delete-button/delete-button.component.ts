@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AlbumService } from '../../../core/service/album.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-delete-button',
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './delete-button.component.html',
   styleUrl: './delete-button.component.css'
 })
