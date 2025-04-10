@@ -6,28 +6,39 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-search-album',
+  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './search-album.component.html',
   styleUrl: './search-album.component.css',
 })
 export class SearchAlbumComponent {
-  searchId: string = '';
+  searchTerm: string = '';
+  searchType: 'title' | 'artist' = 'title';
   data: Album | null = null;
+
   constructor(private albumService: AlbumService) {}
 
-  searchAlbumbyId(event: Event): void {
+  searchAlbum(event: Event): void {
     event.preventDefault();
 
-    if (!this.searchId) {
+    if (!this.searchTerm.trim()) {
       return;
     }
-
-    this.albumService.getAlbumsById(this.searchId).subscribe({
-      next: (data) => (this.data = data),
-      error: (err) => {
-        console.error('Error al buscar el album:', err);
-        this.data = null;
-      },
-    });
+    this.albumService
+      .getAlbumByArtistOrTitle(this.searchTerm, this.searchType)
+      .subscribe({
+        next: (data) => {
+          if (Array.isArray(data) && data.length > 0) {
+            this.data = data[0]; // Asumimos que queremos el primer álbum de la lista
+          } else {
+            console.log('No se encontraron resultados');
+            this.data = null;
+          }
+        },
+        error: (err) => {
+          console.error('Error al buscar el álbum:', err);
+          this.data = null;
+        },
+      });
   }
 }

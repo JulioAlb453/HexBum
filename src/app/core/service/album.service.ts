@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Album } from '../domain/album.model';
-import { AlbumRepository } from '../application/album-repository';
-import { Observable } from 'rxjs';
+import { AlbumRepository } from '../domain/Ialbum';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -32,7 +32,18 @@ export class AlbumService implements AlbumRepository {
     return this.http.put<Album>(`${this.baseUrl}${itemId}`, album);
   } 
 
-  getAlbumByArtist(Artist: string): Observable<Album> {
-    return this.http.get<Album>(`${this.baseUrl}`)
+  getAlbumByArtistOrTitle(searchTerm: string, searchType: 'title' | 'artist'): Observable<Album> {
+    const cleanedSearchTerm = searchTerm.trim();
+  
+    if (!cleanedSearchTerm) {
+      return throwError(() => new Error('El término de búsqueda no puede estar vacío.'));
+    }
+  
+    const searchUrl = searchType === 'artist'
+      ? `${this.baseUrl}search/artist/${encodeURIComponent(cleanedSearchTerm)}`
+      : `${this.baseUrl}search/title/${encodeURIComponent(cleanedSearchTerm)}`;
+  
+    return this.http.get<Album>(searchUrl);
   }
+  
 }

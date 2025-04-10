@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { Album } from "../domain/album.model";
+import { Album } from "./album.model";
 
 
 export interface AlbumRepository {

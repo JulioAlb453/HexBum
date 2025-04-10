@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 import { Album } from '../domain/album.model';
-import { AlbumRepository } from './album-repository';
+import { AlbumRepository } from '../domain/Ialbum';
 
 export class AlbumsUseCase {
   constructor(private albumRepository: AlbumRepository) {}
