@@ -18,11 +18,12 @@ export class DeleteButtonComponent {
     console.log('Eliminando album:', itemId);
     this.albumService.deleteAlbum(itemId).subscribe({
       next: () => {
-        console.log('Album eliminado');
+        alert('Álbum eliminado correctamente');
         this.delete.emit();  
       },
       error: (err) => {
-        console.error('Error al eliminar el album', err);
+        console.error('Error al eliminar el album', err)
+        alert('Ocurrió un error al eliminar el álbum. Inténtalo de nuevo.');;
       },
     });
   }

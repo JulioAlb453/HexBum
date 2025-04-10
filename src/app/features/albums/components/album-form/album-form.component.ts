@@ -59,6 +59,7 @@ export class AlbumFormComponent implements OnChanges {
           alert('Álbum creado exitosamente');
           this.albumForm.reset(); 
           this.albumCreated.emit()
+          window.location.reload()
         },
         error: (err) => {
           console.error('Error al crear el álbum:', err);

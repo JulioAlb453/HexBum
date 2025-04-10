@@ -25,7 +25,7 @@ export class SearchAlbumComponent {
       return;
     }
     this.albumService
-      .getAlbumByArtistOrTitle(this.searchTerm, this.searchType)
+      .searchAlbums(this.searchTerm, this.searchType)
       .subscribe({
         next: (data) => {
           if (Array.isArray(data) && data.length > 0) {
