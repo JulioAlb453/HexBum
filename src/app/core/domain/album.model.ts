@@ -1,4 +1,5 @@
 export interface Album{
+        id?: string
         _id?: string
         Title: string
         Artist : string

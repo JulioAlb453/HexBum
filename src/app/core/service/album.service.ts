@@ -6,7 +6,6 @@ import { AlbumsUseCase } from '../application/album.use-case';
 export class AlbumService {
     constructor(private albumsUseCase: AlbumsUseCase) {} 
 
-    // Expone métodos a componentes
     getAlbums(): Observable<Album[]> {
         return this.albumsUseCase.getAlbums();
     }

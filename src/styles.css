@@ -10,5 +10,34 @@ body {
   color: black;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Estilos personalizados para las alertas */
+
+.snack-bar-success {
+  background-color: #4caf50; /* Verde para éxito */
+  color: white;
+  font-weight: bold;
+}
+
+.snack-bar-error {
+  background-color: #f44336; /* Rojo para error */
+  color: white;
+  font-weight: bold;
+}
+
+.snack-bar-info {
+  background-color: #2196f3; /* Azul para información */
+  color: white;
+  font-weight: bold;
+}
+
+.snack-bar-warning {
+  background-color: #ffeb3b; /* Amarillo para stock bajo */
+  color: black;
+  font-weight: bold;
+}
+
+.snack-bar-danger {
+  background-color: #d32f2f; /* Rojo para sin stock */
+  color: white;
+  font-weight: bold;
+}
