@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlbumService } from '../../../../core/service/album.service';
 import { DeleteButtonComponent } from '../../../../shared/components/delete-button/delete-button.component';
 import { ButtonUpdateAlbumComponentComponent } from '../button-update-albumc-component/button-update-album-component.component';
+
 @Component({
   selector: 'app-album-list',
   standalone: true,
@@ -15,7 +16,6 @@ import { ButtonUpdateAlbumComponentComponent } from '../button-update-albumc-com
     HttpClientModule,
     DeleteButtonComponent,
     ButtonUpdateAlbumComponentComponent,
-    
   ],
   templateUrl: './album-list.component.html',
   styleUrls: ['./album-list.component.css'],
@@ -39,23 +39,26 @@ export class AlbumListComponent implements OnInit {
     this.fetchAlbums();
   }
 
+  // Método para obtener los álbumes
   fetchAlbums(): void {
     this.albumService.getAlbums().subscribe({
       next: (data) => {
         this.dataSource = data || [];
-        console.log(data)
+        console.log(data);
       },
       error: (err) => {
-        console.error('Error al cargar los albums:', err);
+        console.error('Error al cargar los álbumes:', err);
       },
     });
   }
- 
-  handlerAlbumsDelete():void{
-    this.fetchAlbums()
+
+  // Método para manejar la eliminación
+  handlerAlbumsDelete(): void {
+    this.fetchAlbums();  // Recargar la lista después de la eliminación
   }
 
-  handlerAlbumsUpdate(): void{
-    this.fetchAlbums()
+  // Método para manejar la actualización
+  handlerAlbumsUpdate(): void {
+    this.fetchAlbums();  // Recargar la lista después de la actualización
   }
 }
