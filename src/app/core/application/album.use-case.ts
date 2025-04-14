@@ -11,6 +11,11 @@ export class AlbumsUseCase {
     return this.repository.getAlbums();
   }
 
+  getAlbumsById(id: string, album: Album): Observable<Album> {
+    return this.repository.getAlbumById(id, album);
+  }
+  
+
   createAlbum(album: Album): Observable<Album> {
     if (!album || !album.Title || !album.Artist) {
       return throwError(() => new Error('El álbum debe tener un título y un artista.'));

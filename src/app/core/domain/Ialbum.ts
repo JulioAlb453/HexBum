@@ -12,6 +12,6 @@ export interface AlbumRepository {
     createAlbum(album: Album): Observable<Album>
     deleteAlbum(id: string): Observable<void>
     updateAlbum(id: string, album: Album): Observable<Album>;
-
+    getAlbumById(id: string, album: Album): Observable<Album>;
 
 }

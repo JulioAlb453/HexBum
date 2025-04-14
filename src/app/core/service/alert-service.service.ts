@@ -1,4 +1,3 @@
-// alert-service.service.ts
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -12,12 +11,10 @@ export class AlertService {
     this.snackBar.open(message, 'Cerrar', {
       duration: 8000, 
       panelClass: ['snack-bar-success'],
-      verticalPosition: 'top', // Mostrar en la parte superior
-      horizontalPosition: 'right', // Mostrar en la parte derecha
+      verticalPosition: 'top',  
     });
   }
 
-  // Mostrar alerta de error
   showError(message: string): void {
     this.snackBar.open(message, 'Cerrar', {
       duration: 8000,
@@ -27,7 +24,6 @@ export class AlertService {
     });
   }
 
-  // Mostrar alerta de información
   showInfo(message: string): void {
     this.snackBar.open(message, 'Cerrar', {
       duration: 8000,
@@ -37,7 +33,6 @@ export class AlertService {
     });
   }
 
-  // Alerta de stock bajo
   showLowStockAlert(): void {
     this.snackBar.open('¡Atención! El stock del álbum está bajo.', 'Cerrar', {
       duration: 8000,
@@ -47,7 +42,6 @@ export class AlertService {
     });
   }
 
-  // Alerta de sin stock
   showOutOfStockAlert(): void {
     this.snackBar.open('¡Atención! El álbum está fuera de stock.', 'Cerrar', {
       duration: 8000,

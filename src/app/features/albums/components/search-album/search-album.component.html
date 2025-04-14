@@ -1,47 +1,47 @@
-<div class="container">
-  <div class="content-wrapper">
-    <div class="search-container">
-      <form (submit)="searchAlbum($event)">
-        <h3>Buscar álbum</h3>
-        <div class="search-type-selector">
-          <label>
-            <input
-              type="radio"
-              [(ngModel)]="searchType"
-              value="title"
-              name="searchType"
-            />
-            Título
-          </label>
-          <label>
-            <input
-              type="radio"
-              [(ngModel)]="searchType"
-              value="artist"
-              name="searchType"
-            />
-            Artista
-          </label>
-        </div>
-        <input
-          type="text"
-          [(ngModel)]="searchTerm"
-          class="input-album"
-          name="searchTerm"
-          placeholder="Ingrese el título o artista del álbum"
-          required
-        />
-        <button type="submit" class="search-button">Buscar</button>
-      </form>
-    </div>
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="search-container">
+        <form (submit)="searchAlbum($event)">
+          <h3>Buscar álbum</h3>
+          <div class="search-type-selector">
+            <label>
+              <input
+                type="radio"
+                [(ngModel)]="searchType"
+                value="title"
+                name="searchType"
+              />
+              Título
+            </label>
+            <label>
+              <input
+                type="radio"
+                [(ngModel)]="searchType"
+                value="artist"
+                name="searchType"
+              />
+              Artista
+            </label>
+          </div>
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            class="input-album"
+            name="searchTerm"
+            placeholder="Ingrese el título o artista del álbum"
+            required
+          />
+          <button type="submit" class="search-button">Buscar</button>
+        </form>
+      </div>
 
-    <div class="search-result" *ngIf="data">
-      <h3>Resultado de la búsqueda</h3>
-      <h3>Nombre del álbum: {{ data.Title }}</h3>
-      <p>Nombre del artista: {{ data.Artist }}</p>
-      <p>Año de publicación del álbum: {{ data.Year }}</p>
-      <p>Stock actual: {{ data.Stock }} /U</p>
-      <p>Precio individual: {{ data.Price }} $MXN</p>
+      <div class="search-result" *ngIf="data">
+        <h3>Resultado de la búsqueda</h3>
+        <h3>Nombre del álbum: {{ data.Title }}</h3>
+        <p>Nombre del artista: {{ data.Artist }}</p>
+        <p>Año de publicación del álbum: {{ data.Year }}</p>
+        <p>Stock actual: {{ data.Stock }} /U</p>
+        <p>Precio individual: {{ data.Price }} $MXN</p>
+      </div>
     </div>
   </div>
-</div>

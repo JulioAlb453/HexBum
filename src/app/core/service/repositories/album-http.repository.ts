@@ -14,6 +14,10 @@ export class AlbumHttpRepository implements AlbumRepository {
         return this.http.get<Album[]>(this.baseUrl);
     }
 
+    getAlbumById(id: string, album: Album): Observable<Album> {
+        return this.http.get<Album>(`${this.baseUrl}/${id}`);
+      }
+
     createAlbum(album: Album): Observable<Album> {
         return this.http.post<Album>(this.baseUrl, album);
     }
@@ -23,8 +27,9 @@ export class AlbumHttpRepository implements AlbumRepository {
     }
 
     updateAlbum(id: string, album: Album): Observable<Album> {
-        return this.http.put<Album>(`${this.baseUrl}${id}`, album);
-    }
+        return this.http.put<Album>(`/api/albums/${id}`, album);
+      }
+      
 
     searchAlbum(searchTerm: string, searchType: 'title' | 'artist'): Observable<Album[]> {
         const url = `${this.baseUrl}search/${searchType}/${encodeURIComponent(searchTerm)}`;

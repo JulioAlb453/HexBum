@@ -10,13 +10,16 @@ export class AlbumService {
         return this.albumsUseCase.getAlbums();
     }
 
+    getAlbumsById(id: string, album: Album): Observable<Album> {
+        return this.albumsUseCase.getAlbumsById(id, album); 
+      }
+
     createAlbum(album: Album): Observable<Album> {
         return this.albumsUseCase.createAlbum(album);
     }
-
     updateAlbum(id: string, album: Album): Observable<Album> {
         return this.albumsUseCase.updateAlbum(id, album);
-    }
+      }
 
     deleteAlbum(id: string): Observable<void> {
         return this.albumsUseCase.deleteAlbum(id);
